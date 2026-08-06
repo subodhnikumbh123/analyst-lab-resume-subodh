@@ -3,7 +3,17 @@
 import type { Filters, SectionKey } from "@/lib/types";
 import Panel from "./Panel";
 
-const TOOLS = ["SQL", "Python", "Excel", "Tableau", "Power BI", "Figma", "Sketch"];
+const TOOLS = [
+  "SQL",
+  "Python",
+  "TypeScript",
+  "Next.js",
+  "Excel",
+  "Tableau",
+  "Power BI",
+  "Figma",
+  "Sketch",
+];
 const INDUSTRIES = ["Finance", "Operations", "Product", "Supply Chain"];
 
 function Pill({
