@@ -12,6 +12,31 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    title: "SentinelAI Fraud Risk Decision Platform",
+    tools: ["Python", "Streamlit", "scikit-learn", "Plotly"],
+    industry: "Fintech",
+    highlights: [
+      "Trained and evaluated a fraud-risk model on approximately 1.85 million synthetic US card transactions",
+      "Engineered behavioral, temporal, geographic, and customer-baseline features using leakage-safe training and holdout periods",
+      "Converted model scores into approve, review, and decline actions using explicit loss, review-cost, and customer-friction assumptions",
+      "Added evidence-grounded explanations and tested untrusted customer text against 125 Microsoft BIPIA attack templates",
+    ],
+    repoUrl: "https://github.com/subodhnikumbh123/sentinel-ai-risk-platform",
+  },
+  {
+    title: "SupplyShift Player vs Adaptive AI Challenge",
+    tools: ["TypeScript", "Next.js", "AI Simulation"],
+    industry: "Supply Chain",
+    highlights: [
+      "Built an interactive 12-month supply-chain strategy game where players compete against an adaptive AI planner",
+      "Generated a different hidden market each game using growth curves, regional demand, price sensitivity, seasonality, and demand shocks",
+      "Designed a plan, observe, and learn feedback loop that makes inventory and pricing tradeoffs visible month by month",
+      "Created a responsive decision interface that turns supply-chain forecasting concepts into a playable analytical experience",
+    ],
+    liveUrl: "https://supplyshift-game-subodh.vercel.app/",
+    repoUrl: "https://github.com/subodhnikumbh123/supplyshift-game-subodh",
+  },
+  {
     title: "NEXUS Multi-Warehouse Inventory Control Tower",
     tools: ["Python", "SQL", "TypeScript", "Next.js"],
     industry: "Supply Chain",

@@ -8,13 +8,17 @@ const TOOLS = [
   "Python",
   "TypeScript",
   "Next.js",
+  "Streamlit",
+  "scikit-learn",
+  "Plotly",
+  "AI Simulation",
   "Excel",
   "Tableau",
   "Power BI",
   "Figma",
   "Sketch",
 ];
-const INDUSTRIES = ["Finance", "Operations", "Product", "Supply Chain"];
+const INDUSTRIES = ["Finance", "Fintech", "Operations", "Product", "Supply Chain"];
 
 function Pill({
   label,
