@@ -13,15 +13,15 @@ export default function AboutMe() {
 
       <div className="flex-1 space-y-4">
         <p className="text-slate-300">
-          I’m Subodh — Graduate student at UT Dallas specializing in Business
-          Intelligence and Data Analytics. Experienced in transforming complex
-          data into actionable insights using tools such as Power BI, Tableau,
-          SQL, and Excel.
+          Hi, I’m Subodh. I have recently graduated with a M.S. in Information Technology and Management from UT Dallas 
+          and specializing in Business Intelligence, Operations and Data Analytics. 
+          Experienced in transforming complex data into actionable insights using tools such as Power BI, Tableau,
+          SQL, Python and Advanced Excel.
         </p>
 
         <p className="text-slate-300 leading-6">
           Skilled at building interactive dashboards, automating reporting
-          workflows, and supporting data-driven decision-making across finance
+          workflows, and supporting data-driven decision-making across finance, strategy
           and operations.
         </p>
 
