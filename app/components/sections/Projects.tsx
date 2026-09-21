@@ -21,6 +21,7 @@ const PROJECTS: Project[] = [
       "Converted model scores into approve, review, and decline actions using explicit loss, review-cost, and customer-friction assumptions",
       "Added evidence-grounded explanations and tested untrusted customer text against 125 Microsoft BIPIA attack templates",
     ],
+    liveUrl: "/projects/sentinel-ai",
     repoUrl: "https://github.com/subodhnikumbh123/sentinel-ai-risk-platform",
   },
   {
