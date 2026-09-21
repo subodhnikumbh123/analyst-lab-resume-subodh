@@ -1,34 +1,49 @@
+import Image from "next/image";
+
 export default function AboutMe() {
   return (
     <div className="grid gap-7 lg:grid-cols-[176px_1fr] lg:items-start">
       <div className="relative">
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-slate-700/40 to-slate-900/40 blur-xl" />
 
-        <img
+        <Image
           src="/profile.png"
           alt="Subodh Nikumbh"
+          width={176}
+          height={176}
           className="relative h-44 w-44 rounded-2xl border border-slate-700/60 object-cover shadow-xl"
         />
       </div>
 
       <div className="space-y-5">
-        <div>
-          <p className="text-lg font-semibold text-slate-100">
-            I turn operational data into clear decisions.
+        <div className="max-w-2xl space-y-4 text-sm leading-6 text-slate-300">
+          <p>
+            Hi, I’m Subodh. I have recently graduated with a M.S. in Information
+            Technology and Management from UT Dallas and specializing in Business
+            Intelligence, Operations and Data Analytics.
           </p>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300">
-            I’m a Dallas-based data and business analyst with 2+ years of experience
-            across analytics, business systems, and AI-enabled workflows. My work spans
-            operational reporting, data quality, customer journeys, and decision-support
-            tools built with Python, SQL, Power BI, and Excel.
+          <p>
+            I have 2+ years of experience in industries related to AI, Financial Data
+            Analytics and Supply Chain. Majority of my work focused on transforming
+            complex data into actionable insights using tools such as SQL, Python,
+            Power BI, Tableau, and Advanced Excel.
+          </p>
+          <p>
+            Skilled at building interactive dashboards, automating reporting workflows,
+            and supporting data-driven decision-making across finance, strategy and
+            operations.
+          </p>
+          <p>
+            Passionate about leveraging analytics and AI-driven automation to enhance
+            operational efficiency and accelerate digital transformation.
           </p>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-3">
           {[
-            ["FOCUS", "BI, risk, and operations"],
-            ["APPROACH", "Evidence before assumptions"],
-            ["LOCATION", "Dallas, TX · open to relocation"],
+            ["FOCUS", "Data Analytics, Risk Management, Operations"],
+            ["APPROACH", "Evidence before Assumptions"],
+            ["LOCATION", "Dallas, TX"],
           ].map(([label, value]) => (
             <div
               key={label}
@@ -38,14 +53,12 @@ export default function AboutMe() {
                 {label}
               </p>
               <p className="mt-2 text-sm text-slate-200">{value}</p>
+              {label === "LOCATION" && (
+                <p className="mt-1 text-sm text-slate-200">Open to Relocation</p>
+              )}
             </div>
           ))}
         </div>
-
-        <p className="max-w-2xl text-sm leading-6 text-slate-300">
-          I’m especially interested in roles where analytics connects finance,
-          supply chain, product, and responsible AI to measurable business outcomes.
-        </p>
       </div>
     </div>
   );
