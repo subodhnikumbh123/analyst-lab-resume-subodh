@@ -8,7 +8,6 @@ const TOOLS = [
   "Python",
   "TypeScript",
   "Next.js",
-  "Streamlit",
   "scikit-learn",
   "Plotly",
   "AI Simulation",
@@ -18,7 +17,7 @@ const TOOLS = [
   "Figma",
   "Sketch",
 ];
-const INDUSTRIES = ["Finance", "Fintech", "Operations", "Product", "Supply Chain"];
+const INDUSTRIES = ["AI", "Finance", "Fintech", "Operations", "Product", "Supply Chain"];
 
 function Pill({
   label,
@@ -65,7 +64,7 @@ export default function LeftPanel({
   filtersDisabled?: boolean;
 }) {
   const nav = [
-    { key: "about_me" as const, label: "About me" },
+    { key: "about_me" as const, label: "About" },
     { key: "experience" as const, label: "Experience" },
     { key: "projects" as const, label: "Projects" },
     { key: "education" as const, label: "Education" },

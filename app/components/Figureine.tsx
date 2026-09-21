@@ -5,24 +5,24 @@ import type { SectionKey } from "@/lib/types";
 
 const TIPS: Record<SectionKey, { title: string; body: string }> = {
   about_me: {
-    title: "Lab Note: About Me",
-    body: "Get to know me! A quick snapshot of who I am, what drives me, and the unique perspective I bring to data analysis.",
+    title: "Portfolio guide",
+    body: "Start here for the shortest version of my analytics focus and the business problems I like solving.",
   },
   experience: {
-    title: "Lab Note: Experience",
-    body: "Get to know my work history: where I’ve been, what I’ve done, and the impact I’ve made. A showcase of my professional journey, highlighting key roles, responsibilities, and achievements that have shaped my career.",
+    title: "Experience guide",
+    body: "Use the search and filters to scan my work by company, tool, or business area.",
   },
   projects: {
-    title: "Lab Note: Projects",
-    body: "Get to know my projects! A showcase of my hands-on experience, problem-solving skills, and the real-world impact of my work. Each project highlights the tools I used, the challenges I overcame, and the results I achieved.",
+    title: "Project guide",
+    body: "Open a live project to see the decision experience, then review the source for implementation details.",
   },
   education: {
-    title: "Lab Note: Education",
-    body: "Get to know my educational background! A summary of my academic journey.",
+    title: "Education guide",
+    body: "My academic work combines information systems, analytics, human factors, and applied AI research.",
   },
   contact: {
-    title: "Lab Note: Contact",
-    body: "Feel free to reach out! Whether you have questions, want to connect, or are interested in collaborating, I’m always open to hearing from fellow data enthusiasts and professionals. Let’s connect and explore opportunities together!",
+    title: "Contact",
+    body: "Connect with me on LinkedIn or download the latest resume from the top of the page.",
   },
 };
 

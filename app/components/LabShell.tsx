@@ -24,24 +24,24 @@ export default function LabShell() {
   const header = useMemo(() => {
     const map: Record<SectionKey, { title: string; subtitle: string }> = {
       about_me: {
-        title: "About Me",
-        subtitle: "Get to know the analyst behind the data.",
+        title: "About",
+        subtitle: "Data, systems, and decisions that move operations forward.",
       },
       experience: {
         title: "Experience",
-        subtitle: "Translating data into outcomes that matter.",
+        subtitle: "A concise view of my professional and applied work.",
       },
       projects: {
         title: "Projects",
         subtitle: "Case studies and analytical deep-dives.",
       },
       education: {
-        title: "Education",
-        subtitle: "Academic foundation and certifications.",
+        title: "Education & Publication",
+        subtitle: "My academic foundation across analytics, technology, and human factors.",
       },
       contact: {
         title: "Contact",
-        subtitle: "Reach out or download or download the resume.",
+        subtitle: "Let’s connect about analytics, AI, risk, or operations roles.",
       },
     };
     return map[section];
@@ -59,7 +59,9 @@ export default function LabShell() {
             <h1 className="mt-1 text-2xl font-semibold text-slate-100">
               Subodh Nikumbh
             </h1>
-            <p className="text-slate-300 italic tracking-wide">Analyst</p>
+            <p className="max-w-xl text-sm text-slate-300">
+              Data &amp; Business Analyst | Supply Chain, BI &amp; Risk Analytics
+            </p>
           </div>
 
           <div className="flex items-center gap-2">

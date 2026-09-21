@@ -9,37 +9,104 @@ type Role = {
   location: string;
   tools: string[];
   industry: string;
-  highlights: string[];
+  summary: string;
 };
 
 const ROLES: Role[] = [
   {
-    company: "Yashtantra Technologies",
-    title: "Sofware Development Engineer",
-    period: "January 2021 – May 2023",
-    location: "Mumbai, India",
-    tools: ["SQL", "Python", "Figma", "Excel", "Sketch"],
+    company: "Confer Solutions AI",
+    title: "Data Analytics Consultant",
+    period: "Jan 2026 - May 2026",
+    location: "Dallas, TX",
+    tools: ["Python", "AI Simulation", "Excel"],
+    industry: "AI",
+    summary:
+      "Analyzed customer journeys for a global nonprofit and helped shape a conversational AI experience with integrated donation and location workflows.",
+  },
+  {
+    company: "HeartMath Inc.",
+    title: "Academic Project Intern",
+    period: "Jan 2024 - May 2024",
+    location: "Boston, MA · Hybrid",
+    tools: ["Excel", "Figma"],
+    industry: "Product",
+    summary:
+      "Developed client-specific concepts for emWave2 users with limited dexterity, with an emphasis on usability and product-risk reduction.",
+  },
+  {
+    company: "Tufts University",
+    title: "Student Services",
+    period: "Sep 2023 - May 2024",
+    location: "Boston, MA · On-site",
+    tools: ["Excel"],
     industry: "Operations",
-    highlights: [
-      "Designed and implemented design systems for client’s website campaigns using Figma and Sketch, improving consistency and user experience, which contributed to a 10% increase in user engagement",
-      "Applied AI-driven analytics (heatmaps, clickstream tracking) to interpret user data and generate actionable business insights, optimizing engagement metrics by 15%",
-      "Established comprehensive design documentation and style guide standards across all client projects by creating reusable component libraries that reduced design-to-development handoff time by 30%.",
-      "Utilized data analysis, user testing, and process improvement frameworks to enhance product performance, reducing funnel drop-off by 25%",
-    ],
+    summary:
+      "Supported student-services administration and cross-team coordination in a fast-moving university environment.",
+  },
+  {
+    company: "Robotics For All",
+    title: "Academic Project Intern",
+    period: "Sep 2023 - Dec 2023",
+    location: "Boston, MA · Hybrid",
+    tools: ["Figma"],
+    industry: "Product",
+    summary:
+      "Supported a high-school robotics team for an Amazon-hosted competition and contributed permanent physical-design installations for its robotics club.",
+  },
+  {
+    company: "Yashtantra Technologies",
+    title: "Software Development Engineer",
+    period: "Jan 2021 - May 2023",
+    location: "Mumbai, India · Remote",
+    tools: ["Python", "SQL", "Power BI", "Excel"],
+    industry: "Operations",
+    summary:
+      "Built data-quality workflows, KPI reporting, and client-facing systems while supporting issue analysis and process improvement.",
+  },
+  {
+    company: "MILESTONE (NGO)",
+    title: "Software Engineer Intern",
+    period: "Aug 2020 - Dec 2020",
+    location: "Delhi, India · Remote",
+    tools: ["Excel", "SQL"],
+    industry: "Product",
+    summary:
+      "Supported software development, research, and delivery for a nonprofit organization.",
+  },
+  {
+    company: "Void Consulting Services & Solutions",
+    title: "Frontend Intern",
+    period: "May 2020 - Jul 2020",
+    location: "Trivandrum, India",
+    tools: ["TypeScript", "SQL"],
+    industry: "Product",
+    summary:
+      "Contributed to frontend implementation and database-connected web experiences for client work.",
+  },
+  {
+    company: "The Shaadi Times",
+    title: "Data Analyst Intern",
+    period: "Jan 2020 - May 2020",
+    location: "Mumbai, India · On-site",
+    tools: ["Excel", "SQL"],
+    industry: "Operations",
+    summary:
+      "Supported business reporting and exploratory analysis for a consumer-facing media organization.",
   },
 ];
 
 export default function Experience({ filters }: { filters: Filters }) {
   const filtered = ROLES.filter((role) => {
+    const q = filters.search.trim().toLowerCase();
     const matchesSearch =
-      !filters.search ||
-      role.company.toLowerCase().includes(filters.search.toLowerCase()) ||
-      role.title.toLowerCase().includes(filters.search.toLowerCase());
-
+      !q ||
+      [role.company, role.title, role.location, role.summary]
+        .join(" ")
+        .toLowerCase()
+        .includes(q);
     const matchesTools =
       filters.tools.length === 0 ||
-      filters.tools.every((tool) => role.tools.includes(tool));
-
+      filters.tools.some((tool) => role.tools.includes(tool));
     const matchesIndustry =
       filters.industry.length === 0 || filters.industry.includes(role.industry);
 
@@ -47,17 +114,13 @@ export default function Experience({ filters }: { filters: Filters }) {
   });
 
   if (filtered.length === 0) {
-    return (
-      <div className="text-sm text-slate-400">
-        No experience matches current filters.
-      </div>
-    );
+    return <div className="text-sm text-slate-400">No experience matches current filters.</div>;
   }
 
   return (
-    <div className="space-y-6">
-      {filtered.map((role, idx) => (
-        <ExperienceCard key={idx} role={role} />
+    <div className="relative space-y-3 before:absolute before:bottom-4 before:left-[7px] before:top-4 before:w-px before:bg-slate-700/50">
+      {filtered.map((role) => (
+        <ExperienceCard key={`${role.company}-${role.period}`} role={role} />
       ))}
     </div>
   );
@@ -65,35 +128,32 @@ export default function Experience({ filters }: { filters: Filters }) {
 
 function ExperienceCard({ role }: { role: Role }) {
   return (
-    <div className="rounded-2xl border border-slate-700/40 bg-slate-950/40 p-5 space-y-3">
-      <div className="flex items-start justify-between">
-        <div>
-          <h3 className="text-base font-semibold text-slate-100">
-            {role.title}
-          </h3>
-          <p className="text-sm text-slate-400">
-            {role.company} · {role.location}
-          </p>
+    <article className="relative pl-7">
+      <span className="absolute left-0 top-6 h-[15px] w-[15px] rounded-full border-4 border-slate-950 bg-cyan-300" />
+      <div className="rounded-2xl border border-slate-700/40 bg-slate-950/40 p-5 transition hover:border-slate-600/70">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <h3 className="text-base font-semibold text-slate-100">{role.title}</h3>
+            <p className="mt-1 text-sm text-slate-400">
+              {role.company} · {role.location}
+            </p>
+          </div>
+          <span className="shrink-0 text-xs text-slate-400">{role.period}</span>
         </div>
-        <span className="text-xs text-slate-400">{role.period}</span>
-      </div>
 
-      <ul className="list-disc pl-5 text-sm text-slate-300 space-y-1">
-        {role.highlights.map((h, i) => (
-          <li key={i}>{h}</li>
-        ))}
-      </ul>
+        <p className="mt-4 text-sm leading-6 text-slate-300">{role.summary}</p>
 
-      <div className="flex flex-wrap gap-2 pt-2">
-        {role.tools.map((tool) => (
-          <span
-            key={tool}
-            className="rounded-full border border-slate-700/60 bg-slate-900 px-3 py-1 text-xs text-slate-300"
-          >
-            {tool}
-          </span>
-        ))}
+        <div className="mt-4 flex flex-wrap gap-2">
+          {role.tools.map((tool) => (
+            <span
+              key={tool}
+              className="rounded-full border border-slate-700/60 bg-slate-900 px-3 py-1 text-xs text-slate-300"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
+    </article>
   );
 }

@@ -13,7 +13,7 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     title: "SentinelAI Fraud Risk Decision Platform",
-    tools: ["Python", "Streamlit", "scikit-learn", "Plotly"],
+    tools: ["Python", "TypeScript", "Next.js", "scikit-learn"],
     industry: "Fintech",
     highlights: [
       "Trained and evaluated a fraud-risk model on approximately 1.85 million synthetic US card transactions",
